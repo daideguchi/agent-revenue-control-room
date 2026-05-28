@@ -22,6 +22,23 @@ PORT=9000
 The raw key must be entered only through a provider secret or environment-variable UI.
 Do not paste it into Cloud Shell, screenshots, README, Devpost, or Git.
 
+## Live Deployment Boundary
+
+Current public health endpoint:
+
+```text
+https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz
+```
+
+This endpoint is intentionally deployed without a Qwen API key.
+It proves Alibaba Function Compute deployment and returns offline packets for `/api/qwen-brief`.
+
+Live Qwen model proof is kept separate in:
+
+```text
+evidence/2026-05-28T014405Z_backend-qwen-live-smoke.json
+```
+
 ## Local Safe Smoke
 
 ```bash

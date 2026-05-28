@@ -11,6 +11,14 @@ MODEL = os.environ.get("QWEN_MODEL", "qwen-plus")
 OFFLINE = os.environ.get("QWEN_OFFLINE_MODE") == "1"
 
 
+def qwen_api_key():
+    return os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("QWEN_CLOUD_API_KEY") or os.environ.get("QWEN_API_KEY")
+
+
+def effective_offline_mode():
+    return OFFLINE or not qwen_api_key()
+
+
 def packet(language, run):
     ja = language == "ja"
     title = (run.get("title") or {}).get(language) or (run.get("title") or {}).get("en") or "Selected run"
@@ -35,8 +43,8 @@ def packet(language, run):
 
 
 def qwen_packet(language, run):
-    api_key = os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("QWEN_CLOUD_API_KEY") or os.environ.get("QWEN_API_KEY")
-    if OFFLINE or not api_key:
+    api_key = qwen_api_key()
+    if effective_offline_mode():
         return {"mode": "offline", "packet": packet(language, run)}
 
     ja = language == "ja"
@@ -107,8 +115,8 @@ class Handler(BaseHTTPRequestHandler):
                 "service": "agent-revenue-control-room",
                 "provider": "alibaba-function-compute-ready",
                 "qwen_model": MODEL,
-                "qwen_key_present": bool(os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("QWEN_CLOUD_API_KEY") or os.environ.get("QWEN_API_KEY")),
-                "offline_mode": OFFLINE,
+                "qwen_key_present": bool(qwen_api_key()),
+                "offline_mode": effective_offline_mode(),
             })
             return
         self.send_json(404, {"ok": False, "error": "not_found"})

@@ -1,0 +1,41 @@
+{
+  "timestamp_utc": "2026-05-28T02:11:55Z",
+  "product": "Agent Revenue Control Room",
+  "provider": "Alibaba Cloud Function Compute",
+  "region": "ap-northeast-1",
+  "function_name": "agent-revenue-control-room",
+  "public_endpoint": "https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run",
+  "runtime": "Custom Runtime (Debian 10), Python 3.10",
+  "trigger": {
+    "name": "defaultTrigger",
+    "type": "HTTP",
+    "auth": "anonymous for safe health proof"
+  },
+  "healthz_check": {
+    "command_boundary": "GET /healthz; no secrets sent",
+    "http_status": 200,
+    "x_fc_request_id": "1-6a17a46b-07c372-1dddf0114003",
+    "response": {
+      "ok": true,
+      "service": "agent-revenue-control-room",
+      "provider": "alibaba-function-compute-ready",
+      "qwen_model": "qwen-plus",
+      "qwen_key_present": false,
+      "offline_mode": true
+    }
+  },
+  "api_check": {
+    "command_boundary": "POST /api/qwen-brief with sample Japanese run; no secrets sent",
+    "http_status": 200,
+    "response": {
+      "mode": "offline",
+      "packet_excerpt": "対象: Alibaba Cloud配置証明\n要点: Function Computeで動く確認です\n判断: 公開ヘルスチェックは可能\n停止ルール: Qwenキーは入れない"
+    }
+  },
+  "claim_boundary": [
+    "The backend is deployed on Alibaba Cloud Function Compute and reachable from the public internet.",
+    "The deployed public endpoint intentionally has no Qwen API key configured.",
+    "Live Qwen model proof is recorded separately in evidence/2026-05-28T014405Z_backend-qwen-live-smoke.json.",
+    "No raw API key is committed, logged, or exposed in this evidence file."
+  ]
+}

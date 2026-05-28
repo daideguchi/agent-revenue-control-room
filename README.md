@@ -41,23 +41,25 @@ The human still chooses:
 ```text
 Static app UI                         ████████░░ 8/10
 Japanese / English UI                 █████████░ 9/10
-Qwen backend code                     ████████░░ 8/10
+Qwen backend code                     █████████░ 9/10
 Local verification                    ██████████ 10/10
-Alibaba Function Compute deployment   ░░░░░░░░░░ 0/10
+Alibaba Function Compute deployment   ████████░░ 8/10
 Final Devpost submission              ░░░░░░░░░░ 0/10
 ```
 
 Current claim boundary:
 
 - the local app works
-- the backend code is ready for Alibaba Function Compute
-- this backend code has completed one live Qwen Cloud smoke test from the local machine
-- final Alibaba Cloud deployment is not yet claimed
+- the backend is deployed on Alibaba Cloud Function Compute
+- the public Alibaba endpoint is reachable and intentionally has no Qwen API key configured
+- the backend code has completed one live Qwen Cloud smoke test from the local machine
+- final Devpost submission is not yet claimed
 
-Live backend smoke evidence:
+Live evidence:
 
 ```text
 evidence/2026-05-28T014405Z_backend-qwen-live-smoke.json
+evidence/2026-05-28T021155Z_alibaba-function-compute-live-health.json
 ```
 
 ## Screenshots
@@ -77,7 +79,7 @@ Mobile:
 Demo video:
 
 ```text
-Pending. Record after Alibaba Function Compute endpoint is live.
+Pending. Record after the final demo script is locked.
 ```
 
 ## What You Can Try
@@ -143,6 +145,21 @@ dist/alibaba-fc-python-backend.zip
 ```
 
 This package contains `app.py` and matches the console default startup command `python3 app.py`.
+
+Deployed proof endpoint:
+
+```text
+https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz
+```
+
+The public endpoint is safe for proof screenshots:
+
+- it runs on Alibaba Cloud Function Compute
+- it returns `qwen_key_present: false`
+- it returns `offline_mode: true`
+- it does not expose or require a Qwen API key
+
+The real Qwen call is proven separately by the live smoke evidence file above.
 
 Live Qwen calls require an environment variable:
 
