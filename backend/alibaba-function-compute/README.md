@@ -1,6 +1,9 @@
 # Alibaba Function Compute Backend
 
-This folder contains the tiny backend intended for Alibaba Cloud Function Compute.
+This folder contains tiny backends intended for Alibaba Cloud Function Compute.
+
+Use `app.py` first if the console is set to the default `python3 app.py` custom runtime.
+Use `server.mjs` if a Node.js runtime is selected.
 
 It exposes two routes:
 
@@ -23,6 +26,7 @@ Do not paste it into Cloud Shell, screenshots, README, Devpost, or Git.
 
 ```bash
 npm run backend:smoke:offline
+QWEN_OFFLINE_MODE=1 python3 backend/alibaba-function-compute/app.py
 ```
 
 This uses `QWEN_OFFLINE_MODE=1` and does not call Qwen.

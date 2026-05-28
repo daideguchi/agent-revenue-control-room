@@ -33,6 +33,7 @@ Agent Revenue Control Room is the missing control layer.
 ## Submission Assets Still Needed
 
 - live Function Compute deployment proof
+- verify `dist/alibaba-fc-python-backend.zip` on Function Compute with minimum instance count set to `0`
 - public repository URL
 - architecture diagram image
 - under-3-minute demo video

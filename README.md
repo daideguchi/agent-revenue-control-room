@@ -119,6 +119,7 @@ The backend lives here:
 
 ```text
 backend/alibaba-function-compute/server.mjs
+backend/alibaba-function-compute/app.py
 ```
 
 It exposes:
@@ -132,7 +133,16 @@ Offline smoke:
 
 ```bash
 npm run backend:smoke:offline
+QWEN_OFFLINE_MODE=1 PORT=9107 python3 backend/alibaba-function-compute/app.py
 ```
+
+Alibaba Function Compute ZIP package:
+
+```text
+dist/alibaba-fc-python-backend.zip
+```
+
+This package contains `app.py` and matches the console default startup command `python3 app.py`.
 
 Live Qwen calls require an environment variable:
 
