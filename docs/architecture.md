@@ -35,6 +35,12 @@ AI agent run
   -> Action log
 ```
 
+Architecture diagram:
+
+```text
+media/architecture.svg
+```
+
 ## Qwen Use
 
 Qwen is used only for a bounded review packet:
@@ -48,12 +54,13 @@ Qwen does not approve the work by itself.
 
 ## Alibaba Cloud Use
 
-The backend is designed for Alibaba Function Compute.
-The minimum deployment proof is:
+The backend is deployed on Alibaba Function Compute.
+The current proof is:
 
 - public `/healthz` route
 - public `/api/qwen-brief` route
-- screenshot or video showing the Function Compute endpoint
+- public endpoint: `https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz`
+- evidence file: `evidence/2026-05-28T021155Z_alibaba-function-compute-live-health.json`
 - source code in this repository
 
 ## Claim Boundary
@@ -61,9 +68,10 @@ The minimum deployment proof is:
 Current local app:
 
 - static UI works
-- local deterministic Qwen packet preview works
+- the Qwen packet button calls the live Alibaba Function Compute endpoint
 - backend code exists
 - offline backend smoke works
 - one local live backend smoke reached Qwen Cloud
+- the public Alibaba endpoint is deployed without a Qwen API key and returns safe offline packets
 
-Do not claim final Alibaba Cloud deployment until a Function Compute endpoint is live and verified.
+Do not claim the public Alibaba endpoint calls Qwen until a provider-secret path is configured and verified.

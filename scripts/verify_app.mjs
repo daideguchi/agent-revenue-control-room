@@ -44,11 +44,14 @@ const cards = await page.locator('.run-card').count();
 if (cards < 5) throw new Error(`expected 5 run cards, got ${cards}`);
 
 await page.click('#draftBtn');
-await page.waitForFunction(() => document.querySelector('#qwenOutput')?.textContent?.includes('Offline preview packet'));
+await page.waitForFunction(() => {
+  const text = document.querySelector('#qwenOutput')?.textContent || '';
+  return text.includes('Alibaba Function Compute packet') || text.includes('Qwen Cloud packet') || text.includes('Offline preview packet');
+});
 await page.click('#proofBtn');
 
 const bodyEn = await page.locator('body').innerText();
-for (const required of ['Solo builders', 'Cost guard', 'Evidence ledger', 'Qwen review packet', 'Proof requested']) {
+for (const required of ['Solo builders', 'Cost guard', 'Evidence ledger', 'Qwen review packet', 'Proof requested', 'Alibaba + Qwen proof backend']) {
   if (!bodyEn.includes(required)) throw new Error(`missing English marker: ${required}`);
 }
 
@@ -57,9 +60,12 @@ await page.screenshot({ path: path.join(root, 'media', 'agent-revenue-control-ro
 await page.click('#langJa');
 await page.waitForSelector('text=AI収益管制室');
 await page.click('#draftBtn');
-await page.waitForFunction(() => document.querySelector('#qwenOutput')?.textContent?.includes('ローカル確認パック'));
+await page.waitForFunction(() => {
+  const text = document.querySelector('#qwenOutput')?.textContent || '';
+  return text.includes('Alibaba Function Compute確認パック') || text.includes('Qwen Cloud確認パック') || text.includes('ローカル確認パック');
+});
 const bodyJa = await page.locator('body').innerText();
-for (const required of ['誰のため', '費用ガード', '証拠台帳', 'Qwen確認パック', '証拠を依頼']) {
+for (const required of ['誰のため', '費用ガード', '証拠台帳', 'Qwen確認パック', '証拠を依頼', 'Alibaba + Qwen 証拠バックエンド']) {
   if (!bodyJa.includes(required)) throw new Error(`missing Japanese marker: ${required}`);
 }
 for (const leaked of ['Proof requested', 'What the human decided', 'Cost guard']) {

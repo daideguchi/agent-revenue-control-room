@@ -1,3 +1,5 @@
+const BACKEND_URL = 'https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run';
+
 const runs = [
   {
     id: 'devpost-finalizer',
@@ -131,27 +133,27 @@ const runs = [
       ja: 'Function Compute配置AI'
     },
     plain: {
-      en: 'An agent can deploy a tiny backend, but cost settings and secret handling must be checked first.',
-      ja: 'AIは小さなバックエンドを配置できますが、費用設定と秘密情報の扱いを先に確認します。'
+      en: 'An agent deployed a tiny Alibaba backend, while keeping Qwen keys out of the public proof endpoint.',
+      ja: 'AIが小さなAlibabaバックエンドを配置し、Qwenキーは公開証拠用エンドポイントの外に保ちました。'
     },
-    status: 'blocked',
-    owner: 'Cost stop',
+    status: 'ready',
+    owner: 'Deployment proof',
     budget: 0.8,
-    spent: 0.0,
-    minutesSaved: 5,
+    spent: 0.03,
+    minutesSaved: 14,
     stopRule: {
-      en: 'Stop on provisioned capacity, paid storage, custom domain, or raw key in terminal.',
-      ja: '常時課金、ストレージ、独自ドメイン、生キーの端末貼り付けは禁止。'
+      en: 'Stop before adding Qwen keys, paid storage, custom domains, or provisioned capacity.',
+      ja: 'Qwenキー、ストレージ、独自ドメイン、常時課金を追加する前に停止。'
     },
     decision: {
-      en: 'Deploy only after flexible/free-tier-safe settings are visible.',
-      ja: '無料枠に収まる柔軟設定が見えてから配置します。'
+      en: 'Public Function Compute endpoint is live in safe no-key mode. Qwen key stays outside the public proof endpoint.',
+      ja: '公開Function Computeはキーなし安全モードで稼働中です。Qwenキーは公開証拠用エンドポイントには置きません。'
     },
     evidence: [
-      ['Console', 'Function Compute console opens'],
-      ['Role', 'Service-linked role approved'],
-      ['Runtime', 'Cloud Shell VM starts for one hour'],
-      ['Gap', 'Durable backend not deployed yet']
+      ['Endpoint', 'Function Compute health returned HTTP 200'],
+      ['Runtime', 'Python 3.10 custom runtime deployed'],
+      ['Secret', 'No Qwen key configured on public endpoint'],
+      ['Mode', 'Public endpoint returns safe offline packet']
     ]
   }
 ];
@@ -161,7 +163,7 @@ const copy = {
     locator: 'Qwen Cloud Hackathon · Track 4 Autopilot Agent',
     title: 'Agent Revenue Control Room',
     tagline: 'A control room for solo builders who use AI agents to earn revenue, but still need cost limits, proof, approvals, and clean handoff logs.',
-    qwenBadge: 'Qwen-ready backend',
+    qwenBadge: 'Alibaba + Qwen proof backend',
     whoLabel: 'Who',
     whoText: 'Solo builders running AI agents',
     painLabel: 'Pain',
@@ -189,7 +191,7 @@ const copy = {
     spentLabel: 'Spent',
     riskLabel: 'Stop rule',
     qwenTitle: 'Qwen review packet',
-    qwenNote: 'The app sends a bounded run summary to the Qwen Cloud backend when deployed. Local preview stays deterministic.',
+    qwenNote: 'This button calls the live Alibaba Function Compute endpoint. The public endpoint is safe no-key mode; separate evidence proves Qwen Cloud live use.',
     draftBtn: 'Build packet',
     logKicker: 'Action log',
     logTitle: 'What the human decided',
@@ -205,7 +207,8 @@ const copy = {
     stopped: 'Stopped',
     offlinePacket: 'Offline preview packet',
     backendPacket: 'Qwen Cloud packet',
-    qwenError: 'Backend unavailable, showing local packet instead.',
+    alibabaPacket: 'Alibaba Function Compute packet',
+    qwenError: 'Live backend unavailable, showing local packet instead.',
     needsApproval: 'Needs approval',
     ready: 'Ready',
     blocked: 'Blocked',
@@ -217,7 +220,7 @@ const copy = {
     locator: 'Qwen Cloud ハッカソン · Track 4 Autopilot Agent',
     title: 'AI収益管制室',
     tagline: 'AIエージェントで稼ぐ人のために、費用、証拠、承認、引き継ぎを一つにまとめる管制室です。',
-    qwenBadge: 'Qwen対応バックエンド',
+    qwenBadge: 'Alibaba + Qwen 証拠バックエンド',
     whoLabel: '誰のため',
     whoText: 'AIエージェントで仕事を進める一人運営者',
     painLabel: '困りごと',
@@ -245,7 +248,7 @@ const copy = {
     spentLabel: '使用済み',
     riskLabel: '停止ルール',
     qwenTitle: 'Qwen確認パック',
-    qwenNote: '配置後は、制限つきの要約だけをQwen Cloudバックエンドへ送ります。ローカルでは決まった文面で確認できます。',
+    qwenNote: 'このボタンは実際のAlibaba Function Computeを呼びます。公開側はキーなし安全モードで、Qwen実呼び出しは別の証拠に分けています。',
     draftBtn: 'パック作成',
     logKicker: '判断ログ',
     logTitle: '人間が決めたこと',
@@ -261,7 +264,8 @@ const copy = {
     stopped: '停止しました',
     offlinePacket: 'ローカル確認パック',
     backendPacket: 'Qwen Cloud確認パック',
-    qwenError: 'バックエンド未接続のため、ローカル確認パックを表示します。',
+    alibabaPacket: 'Alibaba Function Compute確認パック',
+    qwenError: '公開バックエンド未接続のため、ローカル確認パックを表示します。',
     needsApproval: '承認待ち',
     ready: '準備完了',
     blocked: '停止中',
@@ -289,6 +293,7 @@ const jaTerms = {
   'Publisher review': '公開前確認',
   'Proof required': '証拠が必要',
   'Cost stop': '費用で停止',
+  'Deployment proof': '配置証拠',
   'Repo': 'リポジトリ',
   'README and license exist': 'READMEとライセンスがあります',
   'Video': '動画',
@@ -326,7 +331,13 @@ const jaTerms = {
   'Service-linked role approved': 'サービス連携ロールを承認済みです',
   'Runtime': '実行環境',
   'Cloud Shell VM starts for one hour': 'Cloud Shell VMは1時間起動します',
-  'Durable backend not deployed yet': '継続利用できるバックエンドは未配置です'
+  'Durable backend not deployed yet': '継続利用できるバックエンドは未配置です',
+  'Endpoint': '公開URL',
+  'Function Compute health returned HTTP 200': 'Function ComputeのヘルスチェックがHTTP 200を返しました',
+  'Python 3.10 custom runtime deployed': 'Python 3.10カスタム実行環境を配置済みです',
+  'No Qwen key configured on public endpoint': '公開エンドポイントにQwenキーは設定していません',
+  'Mode': 'モード',
+  'Public endpoint returns safe offline packet': '公開エンドポイントは安全なキーなしパックを返します'
 };
 
 function t(key) {
@@ -474,14 +485,15 @@ async function buildPacket() {
   const run = currentRun();
   $('#qwenOutput').textContent = lang === 'ja' ? '作成中です...' : 'Building...';
   try {
-    const response = await fetch('/api/qwen-brief', {
+    const response = await fetch(`${BACKEND_URL}/api/qwen-brief`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ language: lang, run })
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    $('#qwenOutput').textContent = `${t('backendPacket')}\n\n${data.packet}`;
+    const packetLabel = data.mode === 'qwen' ? t('backendPacket') : t('alibabaPacket');
+    $('#qwenOutput').textContent = `${packetLabel}\n${BACKEND_URL}\n\n${data.packet}`;
   } catch {
     $('#qwenOutput').textContent = `${t('qwenError')}\n\n${localPacket(run)}`;
   }

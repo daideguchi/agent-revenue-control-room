@@ -4,3 +4,4 @@ node_modules/
 *.local
 media/*.webm
 media/*.mp4
+!media/demo-walkthrough.mp4

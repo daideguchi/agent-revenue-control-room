@@ -41,11 +41,11 @@ Allowed:
 
 ```text
 Qwen Cloud API route was live-tested.
-The backend is designed for Alibaba Function Compute.
+The backend is deployed on Alibaba Function Compute as a safe no-key proof endpoint.
 ```
 
-Not allowed until verified:
+Not allowed until provider-secret verification:
 
 ```text
-The final app is deployed on Alibaba Cloud.
+The public Alibaba endpoint calls Qwen Cloud.
 ```

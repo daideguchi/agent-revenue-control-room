@@ -44,6 +44,8 @@ Japanese / English UI                 █████████░ 9/10
 Qwen backend code                     █████████░ 9/10
 Local verification                    ██████████ 10/10
 Alibaba Function Compute deployment   ████████░░ 8/10
+Architecture diagram                  ██████████ 10/10
+Captioned demo video asset            ████████░░ 8/10
 Final Devpost submission              ░░░░░░░░░░ 0/10
 ```
 
@@ -53,6 +55,7 @@ Current claim boundary:
 - the backend is deployed on Alibaba Cloud Function Compute
 - the public Alibaba endpoint is reachable and intentionally has no Qwen API key configured
 - the backend code has completed one live Qwen Cloud smoke test from the local machine
+- architecture and captioned demo video assets exist in `media/`
 - final Devpost submission is not yet claimed
 
 Live evidence:
@@ -63,6 +66,10 @@ evidence/2026-05-28T021155Z_alibaba-function-compute-live-health.json
 ```
 
 ## Screenshots
+
+Architecture:
+
+![Agent Revenue Control Room architecture](media/architecture.svg)
 
 English desktop:
 
@@ -78,8 +85,12 @@ Mobile:
 
 Demo video:
 
+[Captioned demo video](media/demo-walkthrough.mp4)
+
+Demo script:
+
 ```text
-Pending. Record after the final demo script is locked.
+docs/demo-script.md
 ```
 
 ## What You Can Try
@@ -190,6 +201,7 @@ AIは速く動けます。
 
 - [Architecture](docs/architecture.md)
 - [Cost guard](docs/cost-guard.md)
+- [Demo script](docs/demo-script.md)
 - [Submission plan](docs/submission-plan.md)
 
 ## License
