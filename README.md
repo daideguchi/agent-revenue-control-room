@@ -71,6 +71,16 @@ Architecture:
 
 ![Agent Revenue Control Room architecture](media/architecture.svg)
 
+Architecture PNG:
+
+```text
+media/architecture.png
+```
+
+Demo thumbnail:
+
+![Agent Revenue Control Room demo thumbnail](media/demo-thumbnail.png)
+
 English desktop:
 
 ![Agent Revenue Control Room English](media/agent-revenue-control-room-full.png)
@@ -204,6 +214,8 @@ AIは速く動けます。
 - [Cost guard](docs/cost-guard.md)
 - [Demo script](docs/demo-script.md)
 - [Devpost draft](docs/devpost-draft.md)
+- [Devpost submission fields](docs/devpost-submission-fields.md)
+- [Submission asset manifest](docs/submission-asset-manifest.md)
 - [Submission plan](docs/submission-plan.md)
 
 ## License

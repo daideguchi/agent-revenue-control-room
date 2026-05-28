@@ -36,8 +36,12 @@ Agent Revenue Control Room is the missing control layer.
 - live Function Compute deployment proof
 - verified `dist/alibaba-fc-python-backend.zip` on Function Compute
 - architecture diagram image: `media/architecture.svg`
+- architecture diagram PNG: `media/architecture.png`
 - captioned local demo video: `media/demo-walkthrough.mp4`
+- demo thumbnail: `media/demo-thumbnail.png`
 - Devpost write-up draft: `docs/devpost-draft.md`
+- Devpost paste-ready fields: `docs/devpost-submission-fields.md`
+- Submission asset manifest: `docs/submission-asset-manifest.md`
 - Claude Opus final UI/UX prompt: `docs/claude-opus-final-uiux-prompt.md`
 
 ## Submission Assets Still Needed
