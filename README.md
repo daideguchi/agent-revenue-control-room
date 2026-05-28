@@ -82,7 +82,13 @@ Pending. Record after Alibaba Function Compute endpoint is live.
 
 ## What You Can Try
 
-Open `index.html` or run a local static server.
+Live app:
+
+```text
+https://daideguchi.github.io/agent-revenue-control-room/
+```
+
+Or open `index.html` locally.
 
 You can:
 
