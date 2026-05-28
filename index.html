@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A control room for solo builders who use AI agents to earn revenue. Cost limits, proof, approvals, and clean handoff logs in one place.">
   <title>Agent Revenue Control Room</title>
-  <link rel="stylesheet" href="styles.css?v=20260528-ux2">
+  <link rel="stylesheet" href="styles.css?v=20260528-ux3">
 </head>
 <body>
   <header class="topbar">
@@ -53,6 +54,16 @@
         <span class="eyebrow" data-i18n="proofHumanLabel">Human gate</span>
         <strong data-i18n="proofHumanText">Approve, ask for proof, or stop</strong>
         <small data-i18n="proofHumanNote">The decision becomes a handoff log.</small>
+      </div>
+    </section>
+
+    <section class="review-path panel" aria-label="judge path">
+      <p class="locator small" data-i18n="reviewKicker">30-second judge path</p>
+      <div class="path-steps">
+        <span><em class="step-num">1</em> <span data-i18n="path1">Pick an agent run</span></span>
+        <span><em class="step-num">2</em> <span data-i18n="path2">Check cost and evidence</span></span>
+        <span><em class="step-num">3</em> <span data-i18n="path3">Ask Qwen for a concise packet</span></span>
+        <span><em class="step-num">4</em> <span data-i18n="path4">Approve, request proof, or stop</span></span>
       </div>
     </section>
 
@@ -153,17 +164,9 @@
       </aside>
     </section>
 
-    <section class="review-path panel">
-      <p class="locator small" data-i18n="reviewKicker">30-second judge path</p>
-      <div class="path-steps">
-        <span data-i18n="path1">Pick an agent run</span>
-        <span data-i18n="path2">Check cost and evidence</span>
-        <span data-i18n="path3">Ask Qwen for a concise packet</span>
-        <span data-i18n="path4">Approve, request proof, or stop</span>
-      </div>
-    </section>
+
   </main>
 
-  <script src="script.js?v=20260528-ux2"></script>
+  <script src="script.js?v=20260528-ux3"></script>
 </body>
 </html>
