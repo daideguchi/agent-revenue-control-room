@@ -39,14 +39,14 @@ The human still chooses:
 ## Current Build Status
 
 ```text
-Static app UI                         ████████░░ 8/10
-Japanese / English UI                 █████████░ 9/10
-Qwen backend code                     █████████░ 9/10
+Static app UI                         ██████████ 10/10
+Japanese / English UI                 ██████████ 10/10
+Qwen backend code                     ██████████ 10/10
 Local verification                    ██████████ 10/10
-Alibaba Function Compute deployment   ████████░░ 8/10
+Alibaba Function Compute deployment   ██████████ 10/10
 Architecture diagram                  ██████████ 10/10
-Captioned demo video asset            ████████░░ 8/10
-Final Devpost submission              ░░░░░░░░░░ 0/10
+Captioned demo video asset            ██████████ 10/10
+Final Devpost submission              ██████████ 10/10
 ```
 
 Current claim boundary:
@@ -56,13 +56,21 @@ Current claim boundary:
 - the public Alibaba endpoint is reachable and intentionally has no Qwen API key configured
 - the backend code has completed one live Qwen Cloud smoke test from the local machine
 - architecture and captioned demo video assets exist in `media/`
-- final Devpost submission is not yet claimed
+- final Devpost submission is complete
 
 Live evidence:
 
 ```text
 evidence/2026-05-28T014405Z_backend-qwen-live-smoke.json
 evidence/2026-05-28T021155Z_alibaba-function-compute-live-health.json
+```
+
+Public submission links:
+
+```text
+Devpost: https://devpost.com/software/agent-revenue-control-room
+YouTube demo: https://www.youtube.com/watch?v=f8BB_-8lBGs
+Direct MP4 backup: https://daideguchi.github.io/agent-revenue-control-room/media/demo-walkthrough.mp4
 ```
 
 ## Screenshots
@@ -97,6 +105,12 @@ Demo video:
 
 [Captioned demo video](media/demo-walkthrough.mp4)
 
+YouTube demo:
+
+```text
+https://www.youtube.com/watch?v=f8BB_-8lBGs
+```
+
 Demo script:
 
 ```text
@@ -109,6 +123,12 @@ Live app:
 
 ```text
 https://daideguchi.github.io/agent-revenue-control-room/
+```
+
+Submitted Devpost project:
+
+```text
+https://devpost.com/software/agent-revenue-control-room
 ```
 
 Or open `index.html` locally.

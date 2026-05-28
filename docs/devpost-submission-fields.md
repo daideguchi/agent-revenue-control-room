@@ -28,13 +28,23 @@ https://daideguchi.github.io/agent-revenue-control-room/
 https://github.com/daideguchi/agent-revenue-control-room
 ```
 
+## Submitted Devpost Project
+
+```text
+https://devpost.com/software/agent-revenue-control-room
+```
+
 ## Demo Video
+
+```text
+https://www.youtube.com/watch?v=f8BB_-8lBGs
+```
+
+Direct MP4 backup:
 
 ```text
 https://daideguchi.github.io/agent-revenue-control-room/media/demo-walkthrough.mp4
 ```
-
-If Devpost rejects a GitHub Pages MP4, upload `media/demo-walkthrough.mp4` to a public video host and replace this URL.
 
 ## Inspiration
 

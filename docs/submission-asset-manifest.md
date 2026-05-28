@@ -6,7 +6,9 @@
 |---|---|
 | Live app | `https://daideguchi.github.io/agent-revenue-control-room/` |
 | Source repo | `https://github.com/daideguchi/agent-revenue-control-room` |
-| Demo video MP4 | `https://daideguchi.github.io/agent-revenue-control-room/media/demo-walkthrough.mp4` |
+| Devpost submission | `https://devpost.com/software/agent-revenue-control-room` |
+| YouTube demo | `https://www.youtube.com/watch?v=f8BB_-8lBGs` |
+| Demo video MP4 backup | `https://daideguchi.github.io/agent-revenue-control-room/media/demo-walkthrough.mp4` |
 | Alibaba health proof | `https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz` |
 | Devpost field copy | `https://github.com/daideguchi/agent-revenue-control-room/blob/main/docs/devpost-submission-fields.md` |
 
@@ -28,12 +30,15 @@
 |---|---|
 | `evidence/2026-05-28T014405Z_backend-qwen-live-smoke.json` | Product backend code reached Qwen Cloud once |
 | `evidence/2026-05-28T021155Z_alibaba-function-compute-live-health.json` | Alibaba Function Compute public health/API proof |
+| `../13_new_hackathon_wave/evidence/20260528T123836Z_qwen_final_submit_after.json` | Devpost final submission proof |
+| `../13_new_hackathon_wave/evidence/20260528T123836Z_qwen_final_submit_after.png` | Devpost final submission screenshot |
 
 ## Verification Commands
 
 ```bash
 npm run verify
 curl -s https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz
+curl -s 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=f8BB_-8lBGs'
 ```
 
 Expected key markers:
@@ -46,14 +51,8 @@ qwen_key_present=false
 offline_mode=true
 ```
 
-## Remaining Submission Decision
+## Final Submission State
 
-The only open asset question is whether Devpost accepts the GitHub Pages MP4 URL directly.
+Submitted to Devpost on 2026-05-28 JST.
 
-If not, upload `media/demo-walkthrough.mp4` to a public video host and replace the demo video URL in:
-
-- `docs/devpost-submission-fields.md`
-- `docs/submission-plan.md`
-- this manifest
-
-Do not click final submit until DD finishes the final human verification.
+The Devpost video field uses the YouTube demo URL. The GitHub Pages MP4 remains available as a direct backup asset.

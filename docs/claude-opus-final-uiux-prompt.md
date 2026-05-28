@@ -1,5 +1,7 @@
 # Claude Opus Final UI/UX Prompt
 
+Status note: this prompt was used before final Devpost submission. The project is now submitted, so treat this document as historical UI/UX handoff context, not as current submission status.
+
 Use this prompt for the final UI/UX pass.
 
 ```text

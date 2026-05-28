@@ -33,19 +33,22 @@ Agent Revenue Control Room is the missing control layer.
 ## Assets Ready
 
 - public repository URL
+- submitted Devpost project URL
 - live Function Compute deployment proof
 - verified `dist/alibaba-fc-python-backend.zip` on Function Compute
 - architecture diagram image: `media/architecture.svg`
 - architecture diagram PNG: `media/architecture.png`
 - captioned local demo video: `media/demo-walkthrough.mp4`
+- YouTube demo video: `https://www.youtube.com/watch?v=f8BB_-8lBGs`
 - demo thumbnail: `media/demo-thumbnail.png`
 - Devpost write-up draft: `docs/devpost-draft.md`
 - Devpost paste-ready fields: `docs/devpost-submission-fields.md`
 - Submission asset manifest: `docs/submission-asset-manifest.md`
 - Claude Opus final UI/UX prompt: `docs/claude-opus-final-uiux-prompt.md`
 
-## Submission Assets Still Needed
+## Final Submission State
 
-- public hosted demo video URL
-- final Devpost copy review
-- final human verification before submit
+```text
+Devpost submitted: https://devpost.com/software/agent-revenue-control-room
+Submitted evidence: ../13_new_hackathon_wave/evidence/20260528T123836Z_qwen_final_submit_after.json
+```
