@@ -16,7 +16,7 @@
 
 | File | Use |
 |---|---|
-| `media/demo-walkthrough.mp4` | Public demo video asset, 22 seconds, silent with captions |
+| `media/demo-walkthrough.mp4` | Public demo video asset, 22 seconds, with captions and English narration |
 | `media/demo-thumbnail.png` | Demo thumbnail / Devpost cover candidate |
 | `media/architecture.png` | Architecture diagram PNG for Devpost upload |
 | `media/architecture.svg` | Editable architecture diagram |

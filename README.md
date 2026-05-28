@@ -55,7 +55,7 @@ Current claim boundary:
 - the backend is deployed on Alibaba Cloud Function Compute
 - the public Alibaba endpoint is reachable and intentionally has no Qwen API key configured
 - the backend code has completed one live Qwen Cloud smoke test from the local machine
-- architecture and captioned demo video assets exist in `media/`
+- architecture and captioned/narrated demo video assets exist in `media/`
 - final Devpost submission is complete
 
 Live evidence:
@@ -103,7 +103,7 @@ Mobile:
 
 Demo video:
 
-[Captioned demo video](media/demo-walkthrough.mp4)
+[Captioned and narrated demo video](media/demo-walkthrough.mp4)
 
 YouTube demo:
 

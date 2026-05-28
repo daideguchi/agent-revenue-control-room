@@ -110,7 +110,7 @@ It is a control room for human-AI revenue work.
 - live Alibaba Function Compute endpoint
 - local backend live smoke test against Qwen Cloud
 - architecture diagram
-- captioned demo video asset
+- captioned and narrated demo video asset
 - no-secret verification
 
 ## Claim Boundary
