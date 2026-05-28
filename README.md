@@ -202,6 +202,7 @@ AIは速く動けます。
 - [Architecture](docs/architecture.md)
 - [Cost guard](docs/cost-guard.md)
 - [Demo script](docs/demo-script.md)
+- [Devpost draft](docs/devpost-draft.md)
 - [Submission plan](docs/submission-plan.md)
 
 ## License

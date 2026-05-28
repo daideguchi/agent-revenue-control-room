@@ -37,8 +37,10 @@ Agent Revenue Control Room is the missing control layer.
 - verified `dist/alibaba-fc-python-backend.zip` on Function Compute
 - architecture diagram image: `media/architecture.svg`
 - captioned local demo video: `media/demo-walkthrough.mp4`
+- Devpost write-up draft: `docs/devpost-draft.md`
 
 ## Submission Assets Still Needed
 
 - public hosted demo video URL
-- final Devpost write-up
+- final Devpost copy review
+- final human verification before submit
