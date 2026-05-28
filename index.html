@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Revenue Control Room</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="locator" data-i18n="locator">Qwen Cloud Hackathon · Track 4 Autopilot Agent</p>
+      <h1 data-i18n="title">Agent Revenue Control Room</h1>
+      <p class="tagline" data-i18n="tagline">A control room for solo builders who use AI agents to earn revenue, but still need cost limits, proof, approvals, and clean handoff logs.</p>
+    </div>
+    <div class="top-actions" aria-label="language and status">
+      <span class="live-badge" data-i18n="qwenBadge">Qwen-ready backend</span>
+      <div class="lang-toggle" aria-label="Language">
+        <button type="button" id="langEn">EN</button>
+        <button type="button" id="langJa">日本語</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="mission-strip" aria-label="judge summary">
+      <div>
+        <span class="eyebrow" data-i18n="whoLabel">Who</span>
+        <strong data-i18n="whoText">Solo builders running AI agents</strong>
+      </div>
+      <div>
+        <span class="eyebrow" data-i18n="painLabel">Pain</span>
+        <strong data-i18n="painText">Agents can act fast, spend money, and lose context</strong>
+      </div>
+      <div>
+        <span class="eyebrow" data-i18n="solveLabel">How</span>
+        <strong data-i18n="solveText">Turn each agent run into a reviewed, cost-bounded work packet</strong>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="control metrics">
+      <article class="metric">
+        <span data-i18n="mNeeds">Needs approval</span>
+        <strong id="metricNeeds">0</strong>
+      </article>
+      <article class="metric">
+        <span data-i18n="mRisk">Cost/risk stops</span>
+        <strong id="metricRisk">0</strong>
+      </article>
+      <article class="metric">
+        <span data-i18n="mEvidence">Evidence items</span>
+        <strong id="metricEvidence">0</strong>
+      </article>
+      <article class="metric">
+        <span data-i18n="mSaved">Review minutes saved</span>
+        <strong id="metricSaved">0</strong>
+      </article>
+    </section>
+
+    <section class="workspace" aria-label="agent control room">
+      <aside class="panel run-list-panel">
+        <div class="panel-head">
+          <div>
+            <p class="locator small" data-i18n="inboxKicker">Run inbox</p>
+            <h2 data-i18n="inboxTitle">AI work waiting for human control</h2>
+          </div>
+          <select id="filterSelect" aria-label="Filter runs">
+            <option value="all" data-i18n="filterAll">All</option>
+            <option value="approval" data-i18n="filterApproval">Needs approval</option>
+            <option value="blocked" data-i18n="filterBlocked">Blocked</option>
+            <option value="ready" data-i18n="filterReady">Ready</option>
+          </select>
+        </div>
+        <div id="runList" class="run-list"></div>
+      </aside>
+
+      <section class="panel detail-panel">
+        <div class="detail-grid">
+          <div class="run-summary">
+            <p class="locator small" id="selectedLane">Selected run</p>
+            <h2 id="runTitle">Loading...</h2>
+            <p id="runPlain" class="plain"></p>
+            <div class="status-row">
+              <span id="runStatus" class="status-chip"></span>
+              <span id="runBudget" class="status-chip neutral"></span>
+              <span id="runOwner" class="status-chip neutral"></span>
+            </div>
+          </div>
+          <div class="decision-box">
+            <p class="locator small" data-i18n="decisionKicker">Human gate</p>
+            <h3 data-i18n="decisionTitle">No silent autopilot</h3>
+            <p id="decisionText"></p>
+            <div class="button-row">
+              <button type="button" id="approveBtn" data-i18n="approveBtn">Approve</button>
+              <button type="button" id="proofBtn" class="secondary" data-i18n="proofBtn">Ask for proof</button>
+              <button type="button" id="stopBtn" class="danger" data-i18n="stopBtn">Stop</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <section class="subpanel">
+            <h3 data-i18n="evidenceTitle">Evidence ledger</h3>
+            <div id="evidenceList" class="evidence-list"></div>
+          </section>
+          <section class="subpanel">
+            <h3 data-i18n="guardTitle">Cost guard</h3>
+            <div class="guard-bar" aria-label="cost guard">
+              <span id="guardFill"></span>
+            </div>
+            <dl class="guard-facts">
+              <div><dt data-i18n="budgetLabel">Budget</dt><dd id="budgetValue"></dd></div>
+              <div><dt data-i18n="spentLabel">Spent</dt><dd id="spentValue"></dd></div>
+              <div><dt data-i18n="riskLabel">Stop rule</dt><dd id="stopRule"></dd></div>
+            </dl>
+          </section>
+        </div>
+
+        <section class="subpanel qwen-panel">
+          <div class="panel-head compact">
+            <div>
+              <h3 data-i18n="qwenTitle">Qwen review packet</h3>
+              <p data-i18n="qwenNote">The app sends a bounded run summary to the Qwen Cloud backend when deployed. Local preview stays deterministic.</p>
+            </div>
+            <button type="button" id="draftBtn" class="secondary" data-i18n="draftBtn">Build packet</button>
+          </div>
+          <pre id="qwenOutput">Select a run and build a packet.</pre>
+        </section>
+      </section>
+
+      <aside class="panel log-panel">
+        <p class="locator small" data-i18n="logKicker">Action log</p>
+        <h2 data-i18n="logTitle">What the human decided</h2>
+        <div id="actionLog" class="action-log"></div>
+      </aside>
+    </section>
+
+    <section class="review-path panel">
+      <p class="locator small" data-i18n="reviewKicker">30-second judge path</p>
+      <div class="path-steps">
+        <span data-i18n="path1">Pick an agent run</span>
+        <span data-i18n="path2">Check cost and evidence</span>
+        <span data-i18n="path3">Ask Qwen for a concise packet</span>
+        <span data-i18n="path4">Approve, request proof, or stop</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

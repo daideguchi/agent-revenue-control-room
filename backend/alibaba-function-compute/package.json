@@ -1,0 +1,10 @@
+{
+  "name": "agent-revenue-control-room-fc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "smoke:offline": "QWEN_OFFLINE_MODE=1 node server.mjs --smoke"
+  }
+}

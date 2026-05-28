@@ -1,0 +1,17 @@
+{
+  "name": "agent-revenue-control-room",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node scripts/verify_app.mjs && python3 scripts/verify_no_secrets.py",
+    "verify:app": "node scripts/verify_app.mjs",
+    "verify:no-secrets": "python3 scripts/verify_no_secrets.py",
+    "backend:dev": "node backend/alibaba-function-compute/server.mjs",
+    "backend:smoke:offline": "QWEN_OFFLINE_MODE=1 node backend/alibaba-function-compute/server.mjs --smoke"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  },
+  "devDependencies": {}
+}

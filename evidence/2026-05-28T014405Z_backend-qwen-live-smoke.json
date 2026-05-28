@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-05-28T01:44:05Z",
+  "status": "backend_qwen_live_smoke_ok",
+  "cost_guard": {
+    "live_calls": 1,
+    "no_retry_loop": true,
+    "raw_key_logged": false,
+    "raw_key_committed": false
+  },
+  "backend": {
+    "path": "backend/alibaba-function-compute/server.mjs",
+    "route": "qwenPacket() via server smoke mode"
+  },
+  "provider": {
+    "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen-plus"
+  },
+  "result": {
+    "ok": true,
+    "mode": "qwen",
+    "packet_present": true,
+    "usage_total_tokens": 219,
+    "response_id": "chatcmpl-93a51371-8354-9c86-9701-17bd14d4c8d8"
+  },
+  "boundary": "This proves the backend code can call Qwen Cloud from the local machine. It does not prove durable Alibaba Function Compute deployment yet."
+}
