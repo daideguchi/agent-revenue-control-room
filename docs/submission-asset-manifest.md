@@ -7,7 +7,7 @@
 | Live app | `https://daideguchi.github.io/agent-revenue-control-room/` |
 | Source repo | `https://github.com/daideguchi/agent-revenue-control-room` |
 | Devpost submission | `https://devpost.com/software/agent-revenue-control-room` |
-| YouTube demo | `https://www.youtube.com/watch?v=f8BB_-8lBGs` |
+| YouTube demo | `https://www.youtube.com/watch?v=u6WNlAJ_F88` |
 | Demo video MP4 backup | `https://daideguchi.github.io/agent-revenue-control-room/media/demo-walkthrough.mp4` |
 | Alibaba health proof | `https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz` |
 | Devpost field copy | `https://github.com/daideguchi/agent-revenue-control-room/blob/main/docs/devpost-submission-fields.md` |
@@ -38,7 +38,7 @@
 ```bash
 npm run verify
 curl -s https://agent-rrol-room-qaoqbueeak.ap-northeast-1.fcapp.run/healthz
-curl -s 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=f8BB_-8lBGs'
+curl -s 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=u6WNlAJ_F88'
 ```
 
 Expected key markers:

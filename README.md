@@ -69,7 +69,7 @@ Public submission links:
 
 ```text
 Devpost: https://devpost.com/software/agent-revenue-control-room
-YouTube demo: https://www.youtube.com/watch?v=f8BB_-8lBGs
+YouTube demo: https://www.youtube.com/watch?v=u6WNlAJ_F88
 Direct MP4 backup: https://daideguchi.github.io/agent-revenue-control-room/media/demo-walkthrough.mp4
 ```
 
@@ -108,7 +108,7 @@ Demo video:
 YouTube demo:
 
 ```text
-https://www.youtube.com/watch?v=f8BB_-8lBGs
+https://www.youtube.com/watch?v=u6WNlAJ_F88
 ```
 
 Demo script:

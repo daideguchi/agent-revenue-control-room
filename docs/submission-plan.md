@@ -39,7 +39,7 @@ Agent Revenue Control Room is the missing control layer.
 - architecture diagram image: `media/architecture.svg`
 - architecture diagram PNG: `media/architecture.png`
 - captioned and narrated local demo video: `media/demo-walkthrough.mp4`
-- YouTube demo video: `https://www.youtube.com/watch?v=f8BB_-8lBGs`
+- YouTube demo video: `https://www.youtube.com/watch?v=u6WNlAJ_F88`
 - demo thumbnail: `media/demo-thumbnail.png`
 - Devpost write-up draft: `docs/devpost-draft.md`
 - Devpost paste-ready fields: `docs/devpost-submission-fields.md`

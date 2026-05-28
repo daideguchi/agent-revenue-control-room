@@ -37,7 +37,7 @@ https://devpost.com/software/agent-revenue-control-room
 ## Demo Video
 
 ```text
-https://www.youtube.com/watch?v=f8BB_-8lBGs
+https://www.youtube.com/watch?v=u6WNlAJ_F88
 ```
 
 Direct MP4 backup:
