@@ -38,6 +38,7 @@ Agent Revenue Control Room is the missing control layer.
 - architecture diagram image: `media/architecture.svg`
 - captioned local demo video: `media/demo-walkthrough.mp4`
 - Devpost write-up draft: `docs/devpost-draft.md`
+- Claude Opus final UI/UX prompt: `docs/claude-opus-final-uiux-prompt.md`
 
 ## Submission Assets Still Needed
 

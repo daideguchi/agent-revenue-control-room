@@ -170,6 +170,15 @@ const copy = {
     painText: 'Agents can act fast, spend money, and lose context',
     solveLabel: 'How',
     solveText: 'Turn each agent run into a reviewed, cost-bounded work packet',
+    proofBackendLabel: 'Live backend',
+    proofBackendText: 'Alibaba Function Compute returns HTTP 200',
+    proofBackendNote: 'Public endpoint is safe no-key mode.',
+    proofQwenLabel: 'Qwen proof',
+    proofQwenText: 'Qwen Cloud smoke evidence is recorded',
+    proofQwenNote: 'Model proof and public endpoint proof are separated.',
+    proofHumanLabel: 'Human gate',
+    proofHumanText: 'Approve, ask for proof, or stop',
+    proofHumanNote: 'The decision becomes a handoff log.',
     mNeeds: 'Needs approval',
     mRisk: 'Cost/risk stops',
     mEvidence: 'Evidence items',
@@ -227,6 +236,15 @@ const copy = {
     painText: 'AIは速いが、お金を使い、文脈をなくし、勝手に進みすぎる',
     solveLabel: '解決方法',
     solveText: 'AIの作業を、証拠と費用つきの確認パックに変える',
+    proofBackendLabel: '動くバックエンド',
+    proofBackendText: 'Alibaba Function ComputeがHTTP 200を返します',
+    proofBackendNote: '公開側はキーなし安全モードです。',
+    proofQwenLabel: 'Qwen証拠',
+    proofQwenText: 'Qwen Cloud接続証拠を記録済みです',
+    proofQwenNote: 'モデル証拠と公開URL証拠を分けています。',
+    proofHumanLabel: '人間の判断',
+    proofHumanText: '承認、証拠依頼、停止を選べます',
+    proofHumanNote: '判断は次の人やAIへのログになります。',
     mNeeds: '承認待ち',
     mRisk: '停止中',
     mEvidence: '証拠数',
@@ -277,7 +295,7 @@ const copy = {
 
 const savedLanguage = localStorage.getItem('arrc_lang');
 let lang = savedLanguage || ((navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'en');
-let selectedId = runs[0].id;
+let selectedId = 'cloud-deployer';
 let actions = [];
 
 const $ = (selector) => document.querySelector(selector);
@@ -387,7 +405,13 @@ function renderMetrics() {
 
 function renderRunList() {
   const filter = $('#filterSelect').value;
-  const visible = runs.filter((run) => filter === 'all' || run.status === filter);
+  const visible = runs
+    .filter((run) => filter === 'all' || run.status === filter)
+    .sort((a, b) => {
+      if (a.id === selectedId) return -1;
+      if (b.id === selectedId) return 1;
+      return 0;
+    });
   $('#runList').innerHTML = visible.map((run) => `
     <button class="run-card ${run.id === selectedId ? 'active' : ''}" data-run-id="${run.id}" type="button">
       <h3>${run.title[lang]}</h3>

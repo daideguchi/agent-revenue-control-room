@@ -47,6 +47,15 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  filter: brightness(.96);
+}
+
+button:focus-visible, select:focus-visible, .run-card:focus-visible {
+  outline: 3px solid #f0b36d;
+  outline-offset: 2px;
+}
+
 button.secondary {
   background: #fff;
   color: var(--brand);
@@ -161,7 +170,7 @@ main {
   gap: 10px;
 }
 
-.mission-strip > div, .metric, .panel, .subpanel {
+.mission-strip > div, .proof-card, .metric, .panel, .subpanel {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -187,6 +196,37 @@ main {
   max-width: 330px;
   font-size: 17px;
   line-height: 1.35;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 10px;
+}
+
+.proof-card {
+  min-height: 92px;
+  padding: 15px 16px;
+  background: #fbfdfc;
+}
+
+.proof-card.live {
+  border-color: #83c2a2;
+  background: #edf8f3;
+}
+
+.proof-card strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.proof-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .metrics {
@@ -258,9 +298,15 @@ main {
   color: var(--ink);
 }
 
+.run-card:hover {
+  border-color: #9db9b2;
+  background: #f7fbf9;
+}
+
 .run-card.active {
   border-color: var(--brand);
   background: var(--brand-soft);
+  box-shadow: inset 4px 0 0 var(--brand);
 }
 
 .run-card h3 {
@@ -321,6 +367,10 @@ main {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface-muted);
+}
+
+.decision-box h3 {
+  font-size: 16px;
 }
 
 .decision-box p {
@@ -418,6 +468,11 @@ main {
   background: #fbfdfc;
 }
 
+#draftBtn {
+  min-width: 112px;
+  white-space: nowrap;
+}
+
 pre {
   min-height: 168px;
   margin: 0;
@@ -494,7 +549,7 @@ pre {
   .topbar {
     flex-direction: column;
   }
-  .mission-strip, .metrics, .detail-grid, .columns, .path-steps, .run-list {
+  .mission-strip, .proof-strip, .metrics, .detail-grid, .columns, .path-steps, .run-list {
     grid-template-columns: 1fr;
   }
   .button-row {

@@ -51,7 +51,7 @@ await page.waitForFunction(() => {
 await page.click('#proofBtn');
 
 const bodyEn = await page.locator('body').innerText();
-for (const required of ['Solo builders', 'Cost guard', 'Evidence ledger', 'Qwen review packet', 'Proof requested', 'Alibaba + Qwen proof backend']) {
+for (const required of ['Solo builders', 'LIVE BACKEND', 'Cost guard', 'Evidence ledger', 'Qwen review packet', 'Proof requested', 'Alibaba + Qwen proof backend']) {
   if (!bodyEn.includes(required)) throw new Error(`missing English marker: ${required}`);
 }
 
@@ -65,10 +65,10 @@ await page.waitForFunction(() => {
   return text.includes('Alibaba Function Compute確認パック') || text.includes('Qwen Cloud確認パック') || text.includes('ローカル確認パック');
 });
 const bodyJa = await page.locator('body').innerText();
-for (const required of ['誰のため', '費用ガード', '証拠台帳', 'Qwen確認パック', '証拠を依頼', 'Alibaba + Qwen 証拠バックエンド']) {
+for (const required of ['誰のため', '動くバックエンド', '費用ガード', '証拠台帳', 'Qwen確認パック', '証拠を依頼', 'Alibaba + Qwen 証拠バックエンド']) {
   if (!bodyJa.includes(required)) throw new Error(`missing Japanese marker: ${required}`);
 }
-for (const leaked of ['Proof requested', 'What the human decided', 'Cost guard']) {
+for (const leaked of ['Proof requested', 'What the human decided', 'Cost guard', 'Live backend']) {
   if (bodyJa.includes(leaked)) throw new Error(`Japanese UI leaked English marker: ${leaked}`);
 }
 await page.screenshot({ path: path.join(root, 'media', 'agent-revenue-control-room-ja.png'), fullPage: true });

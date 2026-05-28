@@ -200,6 +200,7 @@ AIは速く動けます。
 ## Docs
 
 - [Architecture](docs/architecture.md)
+- [Claude Opus final UI/UX prompt](docs/claude-opus-final-uiux-prompt.md)
 - [Cost guard](docs/cost-guard.md)
 - [Demo script](docs/demo-script.md)
 - [Devpost draft](docs/devpost-draft.md)
